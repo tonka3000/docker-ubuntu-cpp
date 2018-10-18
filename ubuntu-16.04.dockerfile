@@ -15,9 +15,9 @@ RUN apt-get update && \
     chmod +x cmake-3.10.2-Linux-x86_64.sh && \
     ./cmake-3.10.2-Linux-x86_64.sh --skip-license --prefix=/usr && \
     rm cmake-3.10.2-Linux-x86_64.sh && \
-    wget https://github.com/conan-io/conan/releases/download/1.2.1/conan-ubuntu-64_1_2_1.deb && \
-    dpkg -i conan-ubuntu-64_1_2_1.deb && \
-    rm conan-ubuntu-64_1_2_1.deb && \
+    wget https://github.com/conan-io/conan/releases/download/1.8.3/conan-ubuntu-64_1_8_3.deb && \
+    dpkg -i conan-ubuntu-64_1_8_3.deb && \
+    rm conan-ubuntu-64_1_8_3.deb && \
     conan user && \
     pip3 install conan_package_tools
 
