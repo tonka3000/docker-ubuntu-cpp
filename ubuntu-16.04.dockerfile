@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER tonka3000 <tonka3100@gmail.com>
 
+ENV CONAN_PIP_COMMAND pip3
+
 WORKDIR "/project"
 
 RUN apt-get update && \
@@ -15,11 +17,11 @@ RUN apt-get update && \
     chmod +x cmake-3.10.2-Linux-x86_64.sh && \
     ./cmake-3.10.2-Linux-x86_64.sh --skip-license --prefix=/usr && \
     rm cmake-3.10.2-Linux-x86_64.sh && \
-    wget https://github.com/conan-io/conan/releases/download/1.9.2/conan-ubuntu-64_1_9_2.deb && \
-    dpkg -i conan-ubuntu-64_1_9_2.deb && \
-    rm conan-ubuntu-64_1_9_2.deb && \
+    wget https://github.com/conan-io/conan/releases/download/1.19.1/conan-ubuntu-64_1_19_1.deb && \
+    dpkg -i conan-ubuntu-64_1_19_1.deb && \
+    rm conan-ubuntu-64_1_19_1.deb && \
     conan user && \
-    pip3 install conan==1.9.2 conan_package_tools
+    pip3 install conan==1.19.1 conan_package_tools
 
 RUN cmake --version && \
     conan --version && \
